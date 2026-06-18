@@ -1,11 +1,7 @@
 ---
 title: Zero to Website with Quarto
-subtitle: Data Science Learning Community Workshop
+subtitle: Cascadia Conf 2026
 ---
-
-## Get Started
-
-Head to workshop [Materials](materials.qmd)
 
 ## Description
 
@@ -17,7 +13,7 @@ This workshop will be hands-on, and you'll need to prepare a few things before i
 
 ## Your Instructor
 
-[**Dr. Charlotte Wickham**](http://cwick.co.nz) (she/her) is Developer Advocate on the Quarto team at Posit, PBC. As part of her job at Posit, Charlotte helps to keep [quarto.org](https://quarto.org)---a website about, and also built with, Quarto---up to date. Prior to Posit, she taught Statistics and Data Science at Oregon State University where she received awards for her in-person and online teaching.
+[**Dr. Charlotte Wickham**](http://cwick.co.nz) (she/her) is a Developer Advocate on the Quarto team at Posit, PBC. As part of her job at Posit, Charlotte helps to keep [quarto.org](https://quarto.org)---a website about, and also built with, Quarto---up to date. Prior to Posit, she taught Statistics and Data Science at Oregon State University, where she received awards for her in-person and online teaching.
 
 ---
 
