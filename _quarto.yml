@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  title: Zero to Website with Quarto Workshop 
+  description: "Zero to website with Quarto Workshop for Cascadia R Conf 2026"
+  site-url: https://github.io/cwickham/cascadia2026
+  image: thumbnail.jpeg
+  open-graph: true 
+  search: false
+  page-footer: "Made with ❤️ and Quarto"
+  sidebar:
+    title: Zero to Website with Quarto Workshop 
+    alignment: center
+    style: floating
+    logo: image.png
+    logo-alt: Cascadia R Conf 2026 hex sticker
+    contents:
+      - href: index.qmd
+        text: Home
+      - prework.qmd
+      - materials.qmd
+    tools:
+      - icon: github
+        aria-label: Github repo
+        href: https://github.com/cwickham/cascadia2026
+
+format:
+  html:
+    syntax-highlighting: a11y
+    axe:
+      output: document

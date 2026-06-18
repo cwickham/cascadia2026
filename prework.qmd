@@ -1,0 +1,55 @@
+---
+title: Pre-work
+---
+
+Before the workshop, please complete the following steps to prepare (more details in the sections below):
+
+1.  Get the latest **pre-release** version of Quarto
+
+2.  Decide your publishing destination and get an account if needed
+
+3.  Collect some content
+
+4.  *(Optional)* Get up to speed with Quarto
+
+If you have trouble with any of the above steps or have other questions, please reach out in the [workshop Slack channel]().
+
+## 1. Get the latest pre-release version of Quarto
+
+Install the latest pre-release, v1.10.*, from: <https://quarto.org/docs/download/prerelease.html>
+
+## 2. Decide your publishing destination and get an account if needed
+
+I'll be demonstrating publishing your website. To follow along you'll need an account on a hosting platform.
+Pick from these two options:
+
+* GitHub Pages: Choose this, if you are already a GitHub user, and are comfortable creating a repo, and pushing to it. No additional setup required.
+
+* Posit Connect Cloud: Choose this, otherwise. Sign up for a free account at <https://connect.posit.cloud>.
+
+## 3. Collect some content
+
+There are a few things you might like to collect before the workshop:
+
+-   A paragraph about who you are (or what your site is about)
+-   A photo/image you would like on your home page
+-   A list of projects, talks, classes, or publications
+-   Any existing Quarto documents you would like to include in your site
+
+## 4. *(Optional)* Get up to speed with Quarto
+
+Before taking the workshop, you should be able to:
+
+-   Preview or render Quarto documents
+-   Identify the YAML header, Markdown content, and code cells in a Quarto document
+-   Specify Quarto options with YAML syntax
+-   Specify files using relative paths
+
+If you need to catch up, complete **one** of the following:
+
+-   Complete the [**Quarto** chapter](https://r4ds.hadley.nz/quarto) in R for Data Science
+
+-   Complete the [**Getting Started Tutorial**](https://quarto.org/docs/get-started/hello/rstudio.html) on the Quarto documentation site
+
+-   Watch the first 16mins of [**Getting Started with Quarto**](https://youtu.be/_f3latmOhew?si=p5bGyqOIfKHlyvb3) on YouTube
+

@@ -1,0 +1,22 @@
+color: 
+  palette:
+    dark-teal: "#0b5050"
+    light-teal: "#b0c7c7"
+    blue: "#2143F7"
+    purple: "#9600FD"
+    grey: "#333333"
+  foreground: 
+    light: grey
+    dark: white  
+  background: 
+    light: white
+    dark: grey
+  primary: 
+    light: dark-teal
+    dark: light-teal
+
+typography:
+  fonts:
+    - family: Atkinson Hyperlegible
+      source: google
+  base: Atkinson Hyperlegible
