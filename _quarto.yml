@@ -4,7 +4,7 @@ project:
 website:
   title: Zero to Website with Quarto Workshop 
   description: "Zero to website with Quarto Workshop for Cascadia R Conf 2026"
-  site-url: https://github.io/cwickham/cascadia2026
+  site-url: https://cwickham.github.io/cascadia2026
   image: thumbnail.jpeg
   open-graph: true 
   search: false
@@ -28,5 +28,3 @@ website:
 format:
   html:
     syntax-highlighting: a11y
-    axe:
-      output: document
