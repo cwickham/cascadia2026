@@ -3,7 +3,7 @@ title: Zero to Website with Quarto
 subtitle: Cascadia Conf 2026
 ---
 
-[Jump to slides](materials.qmd){.btn .btn-primary}
+[Jump to Pre-work](prework.qmd){.btn .btn-primary} [Jump to slides](materials.qmd){.btn .btn-primary} 
 
 ## Description
 
