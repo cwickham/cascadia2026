@@ -1,0 +1,29 @@
+---
+title: "From Zero to Website with Quarto"
+author: Charlotte Wickham
+subtitle: Cascadia R Conf 2026
+brand:
+  color:
+    palette: 
+      blue: "#186897"
+      orange: "#b2672d"
+      light-grey: "#eee"
+    primary: blue
+  typography: 
+    fonts: 
+      - family: Crimson Text
+        source: bunny      
+      - family: Atkinson Hyperlegible
+        source: google
+    base: Atkinson Hyperlegible
+    headings: 
+      family: Crimson Text
+      color: blue
+    monospace:
+      size: 0.8em
+    monospace-inline: 
+      color: orange
+    monospace-block: 
+      background-color: light-grey
+format: revealjs
+---
