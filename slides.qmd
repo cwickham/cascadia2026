@@ -125,7 +125,7 @@ From a new empty project:
 quarto use template cwickham/website-starter
 ```
 
-## Your Turn
+## Your Turn: Get the starter template
 
 ::: task
 1. Start a new project.   
