@@ -104,6 +104,7 @@ Goal: You create a website with Quarto
 5.  Publish
 6.  Use listings for "lists" of content
 
+BREAK: 3:00 -- 3:15pm
 
 ::: footer
 <https://cwickham.github.io/cascadia2026>
@@ -314,6 +315,8 @@ color:
 
 **Demo:** Change `primary` 
 
+**Positron command:** Show or Focus Standalone Color Picker
+
 Brand Guide: <https://quarto.org/docs/authoring/brand.html>
 
 ## Use brand.yml: Fonts
@@ -473,16 +476,6 @@ Reference: [Projects > Websites](https://quarto.org/docs/reference/projects/webs
 
 # 4. Publish
 
-## Pick a venue
-
-| Provider             | Private Source | Private Site                 | Custom Domain |
-|----------------------|----------------|------------------------------|---------------|
-| Posit Connect Cloud  | ✔️             | Paid plans                   | Paid plans    |
-| GitHub               | Paid plans     | GitHub Enterprise Cloud only | ✔️            |
-| Netlify              | ✔️             | Paid plans                   | ✔️            |
-
-Or Posit Connect if your org has it.
-
 ## Demo: Use `quarto publish`
 
 ``` {.bash filename="Terminal"}
@@ -536,7 +529,17 @@ Pick **one of**:
 
 {{< countdown "10:00" >}}
 
-## Other options
+## Which venue is right for you?
+
+| Provider             | Private Source | Private Site                 | Custom Domain |
+|----------------------|----------------|------------------------------|---------------|
+| Posit Connect Cloud  | ✔️             | Paid plans                   | Paid plans    |
+| GitHub               | Paid plans     | GitHub Enterprise Cloud only | ✔️            |
+| Netlify              | ✔️             | Paid plans                   | ✔️            |
+
+Or Posit Connect if your org has it.
+
+## Other publishing workflows
 
 1. Posit Connect Cloud: 
     
@@ -748,6 +751,21 @@ Listing documentation: [Types](https://quarto.org/docs/websites/website-listings
 
 {{< countdown "10:00" >}}
 
+## Your turn: Keep building!
+
+::: task
+
+1. Keep tweaking the content of pages
+
+2. Delete pages you don't want (and delete any related nav from `_quarto.yml`)
+
+3. Double-check `_quarto.yml` 
+
+4. Publish any updates
+
+:::
+
+{{< countdown "10:00" >}}
 
 # Wrap Up
 
