@@ -6,11 +6,15 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-540b1c759bb52299955bd460b1e29831.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-540b1c759bb52299955bd460b1e29831.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.12">
 
   <meta name="author" content="Charlotte Wickham">
-  <title>Zero to Website with Quarto Workshop – From Zero to Website with Quarto</title>
+  <title>Zero to Website with Quarto – From Zero to Website with Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,8 +35,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-a47b075bece6da40e4a05fd8cec667a5.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-869e36bf76cd89f90a8e4dd9613b94e8.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -124,10 +194,11 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="From Zero to Website with Quarto – Zero to Website with Quarto Workshop">
+<meta property="og:title" content="From Zero to Website with Quarto – Zero to Website with Quarto">
 <meta property="og:description" content="Cascadia R Conf 2026">
 <meta property="og:image" content="https://cwickham.github.io/cascadia2026/thumbnail.jpeg">
-<meta property="og:site_name" content="Zero to Website with Quarto Workshop">
+<meta property="og:site_name" content="Zero to Website with Quarto">
+<meta property="og:image:alt" content="Zero to Website with Quarto with a screenshot of a website titled 'Alicia, Data Scientist'.">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -146,8 +217,836 @@ Charlotte Wickham
 </div>
 
 </section>
-<section class="slide level2">
+<section id="setup" class="slide level2">
+<h2>From Zero to Website with Quarto</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ol type="1">
+<li><p>Find the Slack channel <code>#workshop-quarto-2026</code> in the <a href="https://join.slack.com/t/cascadiarconf/shared_invite/zt-1lu53059t-GAxQtzrwQhmo7BXE7YfC8w">main conference Slack</a></p></li>
+<li><p>Check you’ve completed the steps on the <a href="https://cwickham.github.io/cascadia2026/prework.html">Pre-work page</a>.</p></li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p>Workshop website </p><div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"300","text":"https://cwickham.github.io/cascadia2026","width":"300"});
+  script.remove();
+})();
+</script>
+    <p></p>
+</div></div>
+<div class="footer">
+<p>Workshop website: <a href="https://cwickham.github.io/cascadia2026" class="uri">https://cwickham.github.io/cascadia2026</a></p>
+</div>
+</section>
+<section id="hello-im-charlotte-wickham" class="slide level2">
+<h2>Hello, I’m Charlotte Wickham</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Developer Advocate<br>
+<img data-src="images/quarto-logo-dark.svg" style="vertical-align: middle;;height:1em" alt="Quarto"> @ <img data-src="images/Posit-Logos-2024_horiz-full-color-quarto-web.svg" style="vertical-align: middle;;height:1em" alt="Posit"></p>
+<p>Based in Corvallis, OR <br></p>
+<p><iconify-icon role="img" inline="" icon="bi:linkedin" aria-label="Icon linkedin from bi Iconify.design set." title="Icon linkedin from bi Iconify.design set."></iconify-icon> <a href="https://www.linkedin.com/in/cvwickham/">cvwickham</a><br>
+<iconify-icon role="img" inline="" icon="bi:github" aria-label="Icon github from bi Iconify.design set." title="Icon github from bi Iconify.design set."></iconify-icon> <a href="https://github.com/cwickham">cwickham</a><br>
+<iconify-icon role="img" inline="" icon="bi:envelope" aria-label="Icon envelope from bi Iconify.design set." title="Icon envelope from bi Iconify.design set."></iconify-icon> <a href="mailto:charlotte.wickham@posit.co">charlotte.wickham@posit.co</a></p>
+</div><div class="column" style="width:40%;">
+<p>Workshop website </p><div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"300","text":"https://cwickham.github.io/cascadia2026","width":"300"});
+  script.remove();
+})();
+</script>
+    <p></p>
+</div></div>
+<div class="footer">
+<p><a href="https://cwickham.github.io/cascadia2026" class="uri">https://cwickham.github.io/cascadia2026</a></p>
+</div>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your Turn</h2>
+<div class="task">
+<p>Introduce yourself to your neighbors:</p>
+<ul>
+<li>Name</li>
+<li>Location</li>
+<li>What you need a website for</li>
+</ul>
+<p>Check you are all <a href="#/setup">set up</a></p>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="04" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+<div class="footer">
+<p><a href="https://cwickham.github.io/cascadia2026" class="uri">https://cwickham.github.io/cascadia2026</a></p>
+</div>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<p>Goal: You create a website with Quarto</p>
+<ol type="1">
+<li>Don’t start from scratch</li>
+<li>Add pages and customize navigation</li>
+<li>Make the style your own</li>
+<li>Publish</li>
+<li>Use listings for “lists” of content</li>
+</ol>
+<p>BREAK: 3:00 – 3:15pm</p>
+<div class="footer">
+<p><a href="https://cwickham.github.io/cascadia2026" class="uri">https://cwickham.github.io/cascadia2026</a></p>
+</div>
+</section>
+<section id="what-to-expect" class="slide level2">
+<h2>What to expect</h2>
+<p><strong>My turns:</strong> I’ll use slides, and live code to demonstrate ideas.</p>
+<p><strong>Your Turns:</strong> You practice what you’ve just seen.</p>
+<p>Ask questions:</p>
+<ul>
+<li>During Your Turns</li>
+<li>After Your Turns</li>
+<li>In Slack channel</li>
+</ul>
+<div class="footer">
+<p><a href="https://cwickham.github.io/cascadia2026" class="uri">https://cwickham.github.io/cascadia2026</a></p>
+</div>
+</section>
+<section>
+<section id="dont-start-from-scratch" class="title-slide slide level1 center">
+<h1>1. Don’t start from scratch</h1>
 
+</section>
+<section id="demo-start-from-a-template" class="slide level2">
+<h2>Demo: Start from a template</h2>
+<p>From a new empty project:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template cwickham/website-starter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="your-turn-get-the-starter-template" class="slide level2">
+<h2>Your Turn: Get the starter template</h2>
+<div class="task">
+<ol type="1">
+<li><p>Start a new project.<br>
+RStudio &gt; New Project<br>
+Positron &gt; New Folder from Template &gt; Empty Project</p></li>
+<li><p>Get the template:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> use template cwickham/website-starter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><em>Create a subdirectory for template? No</em></p></li>
+<li><p>Open and preview <code>index.qmd</code>.</p></li>
+<li><p>Match the content in <code>index.qmd</code> to the preview.</p></li>
+</ol>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="demo-exploring-index.qmd" class="slide level2 smaller">
+<h2>Demo: Exploring <code>index.qmd</code></h2>
+<ul>
+<li><p>Render/preview <code>index.qmd</code>. It becomes <code>index.html</code>, your homepage.</p></li>
+<li><p>Regular Quarto document with:</p>
+<ul>
+<li>YAML Header</li>
+<li>Content, possibly including code cells</li>
+</ul></li>
+<li><p>Workflow: Edit, render/preview</p></li>
+<li><p>Uses an <code>about</code> template: <a href="https://quarto.org/docs/websites/website-about.html" class="uri">https://quarto.org/docs/websites/website-about.html</a></p></li>
+<li><p>Other templates: <code>jolla</code>, <code>trestles</code>, <code>solana</code>, <code>marquee</code>, or <code>broadside</code></p></li>
+</ul>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your Turn</h2>
+<div class="task">
+<p>Edit <code>index.qmd</code>:</p>
+<ul>
+<li>Change the <code>title</code> and <code>subtitle</code></li>
+<li>Try a different template: <code>jolla</code>, <code>trestles</code>, <code>solana</code>, <code>marquee</code>, or <code>broadside</code></li>
+<li>Edit, add, or remove items in <code>links</code>. Find other <code>icon</code>s at <a href="https://icons.getbootstrap.com/" class="uri">https://icons.getbootstrap.com/</a></li>
+<li><strong>Challenge</strong>: Use a different <code>image</code>, and edit <code>image-alt</code></li>
+</ul>
+<p>Spare time? Edit the <em>content</em> of the page</p>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="demo-use-a-different-image" class="slide level2">
+<h2>Demo: Use a different <code>image</code></h2>
+<ol type="1">
+<li>Move new image into project</li>
+<li>Replace path</li>
+<li>Edit <code>image-alt</code></li>
+</ol>
+<p>Paths in a <code>.qmd</code> are relative to the location of the <code>.qmd</code></p>
+</section>
+<section id="what-is-a-quarto-website" class="slide level2">
+<h2>What is a Quarto website?</h2>
+<p>A minimal website only needs two files:</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Tells Quarto this is a website project</p>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>index.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My homepage</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Becomes <code>index.html</code> the homepage</p>
+</div></div>
+</section>
+<section id="what-else-is-in-this-template" class="slide level2">
+<h2>What else is in this template?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>website/</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>├── _quarto.yml   </span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>├── index.qmd      </span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>├── profile.jpg   # Used in `index.qmd` </span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>├── _brand.yml    # Theming</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>├── styles.scss   # Custom styles, none defined`</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>├── _examples/    # For teaching, not in website</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>├── README.md     # For GitHub, not in website</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>└── _site/        # Fully rendered site, .gitignored</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section></section>
+<section>
+<section id="add-pages-and-customize-navigation" class="title-slide slide level1 center">
+<h1>2. Add pages and customize navigation</h1>
+
+</section>
+<section id="demo-add-a-page" class="slide level2">
+<h2>Demo: Add a page</h2>
+<ol type="1">
+<li><p>New Quarto Document: <code>projects.qmd</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projects.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false" data-filename="projects.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Projects</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>Some projects I've worked on:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p>File path becomes URL path: <code>{ site url }/projects.html</code></p></li>
+</ol>
+</section>
+<section id="demo-add-navigation" class="slide level2">
+<h2>Demo: Add navigation</h2>
+<p><code>_quarto.yml</code>: configuration file</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> projects.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="folder-structure-determines-urls" class="slide level2 smaller">
+<h2>Folder structure determines URLs</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>website/  </span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>├── _quarto.yml</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>├── index.qmd             { base url }</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>├── about.qmd             { base url }/about.html  </span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>├── reports/                       </span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>|    ├── index.qmd        { base url }/reports/   </span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>|    └── last-month.qmd   { base url }/reports/last-month.html </span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>└── data/                 </span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a>    └── sales.csv         { base url }/data/sales.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>{ base url }</code>: <code>http://localhost:XXXX</code> when previewing locally</p>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your Turn</h2>
+<div class="task">
+<ol type="1">
+<li>Add a page</li>
+<li>Add a link to the page in the navigation</li>
+<li>Skim <a href="https://quarto.org/docs/websites/website-navigation.html" class="uri">https://quarto.org/docs/websites/website-navigation.html</a>. <strong>What other types of navigation are available?</strong></li>
+</ol>
+<p><em>Spare time</em>: Add content to the page</p>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="demo-navigation" class="slide level2">
+<h2>Demo: Navigation</h2>
+<ol type="1">
+<li>Put items on <code>left</code></li>
+<li>Switch to a <code>sidebar</code> with <code>content</code> and back again</li>
+<li>Edit <code>tools</code></li>
+</ol>
+<p>Quick reference: <a href="https://quarto-tdg.org/websites.html#other-navigation-elements" class="uri">https://quarto-tdg.org/websites.html#other-navigation-elements</a></p>
+</section></section>
+<section>
+<section id="make-the-style-your-own" class="title-slide slide level1 center">
+<h1>3. Make the style your own</h1>
+
+</section>
+<section id="use-brand.yml-color" class="slide level2">
+<h2>Use brand.yml: Color</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_brand.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="_brand.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span><span class="co">  # font color</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> </span><span class="st">"#ffffff"</span><span class="co">  # background color</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span><span class="co">     # navbar and links</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demo:</strong> Change <code>primary</code></p>
+<p><strong>Positron command:</strong> Show or Focus Standalone Color Picker</p>
+<p>Brand Guide: <a href="https://quarto.org/docs/authoring/brand.html" class="uri">https://quarto.org/docs/authoring/brand.html</a></p>
+</section>
+<section id="use-brand.yml-fonts" class="slide level2">
+<h2>Use brand.yml: Fonts</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_brand.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="_brand.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Open Sans</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> bunny</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Roboto Slab</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> bunny</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Open Sans</span></span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
+<span id="cb10-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Roboto Slab</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demo:</strong> Add these to <code>_brand.yml</code></p>
+<p><code>bunny</code>: Bunny Fonts, zero-tracking and no-logging policy <a href="https://fonts.bunny.net" class="uri">https://fonts.bunny.net</a></p>
+</section>
+<section id="demo-check-accessibility-with-axe" class="slide level2">
+<h2>Demo: Check accessibility with <code>axe</code></h2>
+<p>Once you start playing with colors it’s easy to create contrast issues.</p>
+<p>Check with <a href="https://github.com/dequelabs/axe-core"><code>axe-core</code></a> by adding:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">axe</span><span class="kw">:</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">output</span><span class="kw">:</span><span class="at"> document</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Remove before publishing!</p>
+</section>
+<section id="your-turn-3" class="slide level2">
+<h2>Your Turn</h2>
+<div class="task">
+<ol type="1">
+<li><p>Edit <code>_brand.yml</code> to customize colors and fonts</p></li>
+<li><p>Enable the <code>axe</code> checks to check for contrast issues</p></li>
+</ol>
+</div>
+<p>Brand Guide: <a href="https://quarto.org/docs/authoring/brand.html#brand-elements" class="uri">https://quarto.org/docs/authoring/brand.html#brand-elements</a></p>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="08" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="use-brand.yml-code" class="slide level2">
+<h2>Use brand.yml: Code</h2>
+<p>If your pages have code, you will probably want to tweak <code>monospace</code> options:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_brand.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-filename="_brand.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">monospace-inline</span><span class="kw">:</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#6b21a8"</span></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">background-color</span><span class="kw">:</span><span class="at"> background </span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">monospace-block</span><span class="kw">:</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">background-color</span><span class="kw">:</span><span class="at"> </span><span class="st">"#eaf2fb"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="use-brand.yml-dark-mode" class="slide level2">
+<h2>Use brand.yml: Dark mode</h2>
+<p>Add <code>light</code> and <code>dark</code> to colors to add a dark mode toggle to your site:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_brand.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-filename="_brand.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st">"#ffffff"</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st">"#ffffff"</span></span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span></span>
+<span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span></span>
+<span id="cb13-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st">"#ffffff"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="name-colors-under-color-palette-to-more-easily-refer-to-them" class="slide level2">
+<h2>Name colors under <code>color: palette</code> to more easily refer to them</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_brand.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-filename="_brand.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">white</span><span class="kw">:</span><span class="at"> </span><span class="st">"#ffffff"</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">grey</span><span class="kw">:</span><span class="at"> </span><span class="st">"#333333"</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pink</span><span class="kw">:</span><span class="at"> </span><span class="st">"#b70ca6"</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> grey</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> white</span></span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> grey</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="sometimes-you-might-need-to-add-scss" class="slide level2 smaller">
+<h2>Sometimes you might need to add SCSS</h2>
+<div class="columns">
+<p>Apply <code>styles.scss</code> to all pages:</p><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">styles.scss</span><span class="kw">,</span><span class="at"> brand</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column">
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.scss</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="styles.scss"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">// Set SASS variables: https://quarto.org/docs/output-formats/html-themes.html#sass-variables</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">$navbar-fg</span>: <span class="va">$brand-white</span><span class="op">;</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">// CSS rules </span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.navbar-title</span> {</span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="fu">lighten(</span><span class="va">$brand-pink</span><span class="op">,</span> <span class="dv">50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$brand-pink</span><span class="op">;</span></span>
+<span id="cb16-13"><a aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div></div>
+<p>See <code>_examples/brand-scss</code>.</p>
+</section>
+<section id="aside-the-three-parts-of-_quarto.yml" class="slide level2">
+<h2>Aside: The three parts of <code>_quarto.yml</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" data-filename="_quarto.yml" data-code-line-numbers="1-2|4-16|18-20"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a></a><span class="fu">project</span><span class="kw">:</span><span class="co"> # Project options </span></span>
+<span id="cb17-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="fu">website</span><span class="kw">:</span><span class="co"> # Website options </span></span>
+<span id="cb17-5"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Website"</span></span>
+<span id="cb17-6"><a></a><span class="at">  </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb17-7"><a></a><span class="at">  </span><span class="fu">open-graph</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # https://quarto.org/docs/websites/website-tools.html#open-graph</span></span>
+<span id="cb17-8"><a></a><span class="at">  </span><span class="fu">page-footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"Made with ❤️ and Quarto"</span></span>
+<span id="cb17-9"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb17-10"><a></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb17-11"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb17-12"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb17-13"><a></a><span class="at">    </span><span class="fu">tools</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-14"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb17-15"><a></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Github</span></span>
+<span id="cb17-16"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://github.com</span></span>
+<span id="cb17-17"><a></a></span>
+<span id="cb17-18"><a></a><span class="fu">format</span><span class="kw">:</span><span class="co"> # Page 'html' format options</span></span>
+<span id="cb17-19"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb17-20"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">brand</span><span class="kw">,</span><span class="at"> styles.scss</span><span class="kw">]</span><span class="at">    </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Reference: <a href="https://quarto.org/docs/reference/projects/websites.html">Projects &gt; Websites</a>, and <a href="https://quarto.org/docs/reference/formats/html.html">Formats &gt; HTML</a></p>
+</section></section>
+<section>
+<section id="publish" class="title-slide slide level1 center">
+<h1>4. Publish</h1>
+
+</section>
+<section id="demo-use-quarto-publish" class="slide level2">
+<h2>Demo: Use <code>quarto publish</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish posit-connect-cloud</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Other venues: <code>gh-pages</code>, <code>netlify</code>, <code>connect</code></p>
+<p>Updates? Re-run <code>quarto publish</code></p>
+<p>Pick <strong>one of</strong>:</p>
+<ul>
+<li>Your Turn: Posit Connect Cloud</li>
+<li>Your Turn: GitHub Pages</li>
+</ul>
+<div class="footer">
+<p><a href="https://quarto.org/docs/publishing/" class="uri">https://quarto.org/docs/publishing/</a></p>
+</div>
+</section>
+<section id="your-turn-posit-connect-cloud" class="slide level2">
+<h2>Your Turn: Posit Connect Cloud</h2>
+<div class="task">
+<ol type="1">
+<li><p>Publish your site to Posit Connect Cloud:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish posit-connect-cloud</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p><strong>Challenge</strong>: find the setting to customize the URL.</p></li>
+</ol>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="your-turn-github-pages" class="slide level2">
+<h2>Your Turn: GitHub Pages</h2>
+<div class="task">
+<ol type="1">
+<li><p>Make your project a Git repo.</p></li>
+<li><p>Commit, and push to GitHub</p></li>
+<li><p>Publish to GitHub Pages:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+</ol>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="which-venue-is-right-for-you" class="slide level2">
+<h2>Which venue is right for you?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 19%">
+<col style="width: 36%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Provider</th>
+<th>Private Source</th>
+<th>Private Site</th>
+<th>Custom Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Posit Connect Cloud</td>
+<td>✔️</td>
+<td>Paid plans</td>
+<td>Paid plans</td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td>Paid plans</td>
+<td>GitHub Enterprise Cloud only</td>
+<td>✔️</td>
+</tr>
+<tr class="odd">
+<td>Netlify</td>
+<td>✔️</td>
+<td>Paid plans</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+<p>Or Posit Connect if your org has it.</p>
+</section>
+<section id="other-publishing-workflows" class="slide level2">
+<h2>Other publishing workflows</h2>
+<ol type="1">
+<li><p>Posit Connect Cloud:</p>
+<ul>
+<li>Use <a href="https://marketplace.visualstudio.com/items?itemName=Posit.publisher">Posit Publisher extension</a> in Positron or VS Code</li>
+<li>Connect <a href="https://docs.posit.co/connect-cloud/user/publish/github.html">directly to GitHub repo</a></li>
+</ul></li>
+<li><p>Continuous integration: <a href="https://quarto-tdg.org/websites.html#sec-ci" class="uri">https://quarto-tdg.org/websites.html#sec-ci</a></p></li>
+</ol>
+</section>
+<section id="website-metadata-search-engines" class="slide level2">
+<h2>Website metadata: search engines</h2>
+<p>Set <code>title</code>, <code>description</code> and <code>site-url</code>.</p>
+<p>E.g. for this workshop’s website:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Zero to Website with Quarto</span></span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Zero to website with Quarto Workshop for Cascadia R Conf 2026"</span></span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">site-url</span><span class="kw">:</span><span class="at"> https://cwickham.github.io/cascadia2026</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="website-metadata-social-cards" class="slide level2">
+<h2>Website metadata: social cards</h2>
+<p>Add a 1200 × 630 px <code>image</code> and <code>image-alt</code>:</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> thumbnail.jpeg</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image-alt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Zero to Website with Quarto with a screenshot of a website titled 'Alicia, Data Scientist'."</span></span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-graph</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at"> </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column">
+<p><img data-src="images/social-cards.png" alt="Example of social card for the workshop website as seen in Slack"></p>
+</div></div>
+</section></section>
+<section>
+<section id="use-listings-for-lists-of-content" class="title-slide slide level1 center">
+<h1>5. Use listings for lists of content</h1>
+
+</section>
+<section id="a-listing-is" class="slide level2">
+<h2>A listing is…</h2>
+<ul>
+<li>an automatically generated list of content</li>
+<li>styled via a template, (built-in <code>type</code>, or custom <code>template</code>)</li>
+<li>can be included on any page</li>
+</ul>
+<div class="footer">
+<p><a href="https://quarto.org/docs/websites/website-listings.html" class="uri">https://quarto.org/docs/websites/website-listings.html</a></p>
+</div>
+</section>
+<section id="use-listings-for" class="slide level2">
+<h2>Use listings for …</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Blog</a></li><li><a href="#tabset-1-2">People</a></li><li><a href="#tabset-1-3">Publications</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img data-src="https://quarto-tdg.org/images/website-listing-default.png"></p>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="https://quarto-tdg.org/images/website-listing-grid.png"></p>
+</div>
+<div id="tabset-1-3">
+<p><img data-src="https://quarto-tdg.org/images/website-listing-table.png"></p>
+</div>
+</div>
+</div>
+<p>See more examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+</section>
+<section id="listing-contents-can-be-a-yaml-file" class="slide level2 smaller">
+<h2>Listing contents: can be a YAML file</h2>
+<p>Items link to <code>path</code>.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_examples/listing-talks/talks.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="_examples/listing-talks/talks.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">date</span><span class="kw">:</span><span class="at"> 2025-03-12</span></span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"From Notebook to Production: Deploying ML Models with Confidence"</span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"A practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection."</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">venue</span><span class="kw">:</span><span class="at"> </span><span class="st">"PyData Seattle"</span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.com/talks/notebook-to-production"</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">date</span><span class="kw">:</span><span class="at"> 2024-11-08</span></span>
+<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Art of the Reproducible Report"</span></span>
+<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Why your analysis should run end-to-end with a single command, and how literate programming tools like Quarto make stakeholder-ready reports painless."</span></span>
+<span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">venue</span><span class="kw">:</span><span class="at"> </span><span class="st">"posit::conf"</span></span>
+<span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.com/talks/reproducible-report"</span></span>
+<span id="cb23-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">date</span><span class="kw">:</span><span class="at"> 2024-06-04</span></span>
+<span id="cb23-14"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Causal Inference for the Skeptical Analyst"</span></span>
+<span id="cb23-15"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Correlation isn't causation, but we can do better than throwing up our hands. An accessible tour of difference-in-differences, propensity scores, and when to trust them."</span></span>
+<span id="cb23-16"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">venue</span><span class="kw">:</span><span class="at"> </span><span class="st">"useR! Conference"</span></span>
+<span id="cb23-17"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://example.com/talks/causal-inference-skeptical-analyst"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="listing-contents-can-other-pages" class="slide level2 smaller">
+<h2>Listing contents: can other pages</h2>
+<p>Items link to page.</p>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>_examples/listing-projects</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>└──projects</span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>    ├── coastal-sensors.qmd</span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a>    ├── forest-canopy.qmd</span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a>    ├── watershed-forecasting.qmd</span>
+<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a>    └── images</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projects/coastal-sensors.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-filename="projects/coastal-sensors.qmd"><pre class="sourceCode markdown code-overflow-wrap code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Coastal Sensor Network"</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Real-time monitoring of water quality along the Oregon coast using a fleet of low-cost IoT sensors."</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/photo-1601698832159-665cbefd11da.jpg</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [IoT, Time Series, Dashboards]</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a>Placeholder content. This project deploys a network of sensors that stream</span>
+<span id="cb25-11"><a aria-hidden="true" tabindex="-1"></a>temperature, salinity, and turbidity readings into a central pipeline, surfaced</span>
+<span id="cb25-12"><a aria-hidden="true" tabindex="-1"></a>through a live dashboard for researchers and the public.</span>
+<span id="cb25-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a aria-hidden="true" tabindex="-1"></a>Photo by <span class="co">[</span><span class="ot">Karsten Winegeart</span><span class="co">](https://unsplash.com/@_karsten)</span> on <span class="co">[</span><span class="ot">Unsplash</span><span class="co">](https://unsplash.com/photos/_m-Xjo9R_y4)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</section>
+<section id="your-turn-brainstorm-a-listing" class="slide level2">
+<h2>Your turn: Brainstorm a listing</h2>
+<div class="task">
+<ol type="1">
+<li><p>Brainstorm a list of content you might want to include in your website.</p></li>
+<li><p>What are the key pieces of information for each item? E.g. <code>title</code>, <code>description</code>, … etc.</p></li>
+<li><p>Does it make sense to give items each their own page, or to use a YAML file?</p></li>
+</ol>
+</div>
+<p>See more examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="adding-a-listing-page" class="slide level2">
+<h2>Adding a listing page</h2>
+<p>A listing page is a regular page that uses the <code>listing</code> option.</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projects.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26" data-filename="projects.qmd" data-code-line-numbers="|3-5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a></a><span class="pp">---</span></span>
+<span id="cb26-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Projects</span></span>
+<span id="cb26-3"><a></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb26-4"><a></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects</span></span>
+<span id="cb26-5"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb26-6"><a></a><span class="at">  </span><span class="fu">grid-columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb26-7"><a></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb26-8"><a></a><span class="at">  </span><span class="fu">filter-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb26-9"><a></a><span class="at">  </span><span class="fu">sort-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb26-10"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>talks.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-filename="talks.qmd" data-code-line-numbers="|3-5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a></a><span class="pp">---</span></span>
+<span id="cb27-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Talks</span></span>
+<span id="cb27-3"><a></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb27-4"><a></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> talks.yml</span></span>
+<span id="cb27-5"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
+<span id="cb27-6"><a></a><span class="at">  </span><span class="fu">filter-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb27-7"><a></a><span class="at">  </span><span class="fu">sort-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb27-8"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</section>
+<section id="your-turn-add-a-listing" class="slide level2">
+<h2>Your turn: Add a listing</h2>
+<div class="task">
+<ol type="1">
+<li><p>Drag one of <code>_examples/listing-projects</code> or <code>_examples/listing-talks</code> into your website.</p></li>
+<li><p>Edit at least one item to match your listing idea.</p></li>
+<li><p>Edit the listing page <code>talks.qmd</code>/<code>projects.qmd</code> to reflect your list.</p></li>
+<li><p>Play with some of the <code>listing</code> options.</p></li>
+</ol>
+</div>
+<p>Listing documentation: <a href="https://quarto.org/docs/websites/website-listings.html#listing-types">Types</a> and <a href="https://quarto.org/docs/websites/website-listings.html#listing-options">Options</a></p>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section>
+<section id="your-turn-keep-building" class="slide level2">
+<h2>Your turn: Keep building!</h2>
+<div class="task">
+<ol type="1">
+<li><p>Keep tweaking the content of pages</p></li>
+<li><p>Delete pages you don’t want (and delete any related nav from <code>_quarto.yml</code>)</p></li>
+<li><p>Double-check <code>_quarto.yml</code></p></li>
+<li><p>Publish any updates</p></li>
+</ol>
+</div>
+<countdown-timer id="timer_bdec386d66ddc48e69e513769c396505adc2c654" minutes="10" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="right: 0;bottom: 0;">
+ </countdown-timer>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap Up</h1>
+
+</section>
+<section id="quarto-websites" class="slide level2">
+<h2>Quarto Websites</h2>
+<p>A minimal website only needs two files:</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>index.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-filename="index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My homepage</span></span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</section>
+<section id="building-a-website" class="slide level2">
+<h2>Building a website</h2>
+<ul>
+<li>Add pages by adding Quarto documents</li>
+<li>Control navigation, website settings, etc. in <code>_quarto.yml</code></li>
+<li>Control colors and fonts in <code>_brand.yml</code></li>
+<li>Two special kinds of pages: listings and about pages</li>
+</ul>
+</section>
+<section id="learning-more" class="slide level2">
+<h2>Learning more</h2>
+<ul>
+<li>Quarto websites documentation: <a href="https://quarto.org/docs/websites/" class="uri">https://quarto.org/docs/websites/</a><br>
+</li>
+<li>Websites chapter in (in-progress) book: <a href="https://quarto-tdg.org/websites.html" class="uri">https://quarto-tdg.org/websites.html</a></li>
+<li>Websites video series: <a href="https://opensource.posit.co/blog/2024-12-04_websites-workshop/" class="uri">https://opensource.posit.co/blog/2024-12-04_websites-workshop/</a></li>
+<li>Learn from other people’s website source: <a href="https://quarto.org/docs/gallery/#websites" class="uri">https://quarto.org/docs/gallery/#websites</a></li>
+</ul>
+</section>
+<section id="qa" class="slide level2">
+<h2>Q&amp;A</h2>
+</section>
+<section id="post-work" class="slide level2">
+<h2>Post Work</h2>
+<ul>
+<li><p>Share your URL in Slack</p></li>
+<li><p>Ask questions in Slack</p></li>
+</ul>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank you!</h1>
 
 
 </section>
@@ -207,7 +1106,7 @@ Charlotte Wickham
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
