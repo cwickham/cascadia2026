@@ -2,10 +2,11 @@ project:
   type: website
 
 website:
-  title: Zero to Website with Quarto Workshop 
+  title: Zero to Website with Quarto
   description: "Zero to website with Quarto Workshop for Cascadia R Conf 2026"
   site-url: https://cwickham.github.io/cascadia2026
   image: thumbnail.jpeg
+  image-alt: "Zero to Website with Quarto with a screenshot of a website titled 'Alicia, Data Scientist'."
   open-graph: true 
   search: false
   page-footer: "Made with ❤️ and Quarto"

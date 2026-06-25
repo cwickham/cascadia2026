@@ -32,15 +32,23 @@ format:
     code-line-numbers: false
 ---
 
-## Getting set up
+## From Zero to Website with Quarto {#setup}
 
-Make sure you've:
+::: {.columns}
+::: {.column width="60%"}
+1. Find the Slack channel `#workshop-quarto-2026` in the [main conference Slack](https://join.slack.com/t/cascadiarconf/shared_invite/zt-1lu53059t-GAxQtzrwQhmo7BXE7YfC8w)
 
+2. Check you've completed the steps on the  [Pre-work page](https://cwickham.github.io/cascadia2026/prework.html).
+::: 
+
+::: {.column width="40%"}
+Workshop website
 {{< qrcode https://cwickham.github.io/cascadia2026  height=300 width=300 >}}
-
+:::
+:::
 
 ::: footer
-https://cwickham.github.io/cascadia2026
+Workshop website: <https://cwickham.github.io/cascadia2026>
 :::
 
 ## Hello, I'm Charlotte Wickham
@@ -54,8 +62,6 @@ Developer Advocate
 Based in Corvallis, OR
 <br>
 
-
-
 {{< iconify bi:linkedin >}} [cvwickham](https://www.linkedin.com/in/cvwickham/)  
 {{< iconify bi:github >}} [cwickham](https://github.com/cwickham)  
 {{< iconify bi:envelope >}} [charlotte.wickham@posit.co](mailto:charlotte.wickham@posit.co)  
@@ -67,7 +73,7 @@ Workshop website
 ::::
 
 ::: footer
-https://cwickham.github.io/cascadia2026
+<https://cwickham.github.io/cascadia2026>
 :::
 
 ## Your Turn
@@ -79,13 +85,13 @@ Introduce yourself to your neighbors:
 -   Location
 -   What you need a website for
 
-Check you are all [set up](#getting-set-up)
+Check you are all [set up](#setup)
 :::
 
 {{< countdown "4:00" >}}
 
 ::: footer
-https://cwickham.github.io/cascadia2026
+<https://cwickham.github.io/cascadia2026>
 :::
 
 ## Outline
@@ -100,7 +106,7 @@ Goal: You create a website with Quarto
 
 
 ::: footer
-<https://charlotte.quarto.pub/dslc24>
+<https://cwickham.github.io/cascadia2026>
 :::
 
 ## What to expect
@@ -109,10 +115,14 @@ Goal: You create a website with Quarto
 
 **Your Turns:** You practice what you've just seen.
 
-Ask questions!
+Ask questions:
+
+* During Your Turns
+* After Your Turns
+* In Slack channel
 
 ::: footer
-<https://charlotte.quarto.pub/dslc24>
+<https://cwickham.github.io/cascadia2026>
 :::
 
 # 1. Don't start from scratch
@@ -193,26 +203,37 @@ A minimal website only needs two files:
 ::::: columns
 
 :::{.column}
-Configuration file:
-
 ```{.yaml filename="_quarto.yml"}
 project: 
   type: website
 ```    
+Tells Quarto this is a website project
 :::
 
 :::{.column}
-A homepage:
-
 ```{.markdown filename="index.qmd"}
 ---
 title: My homepage
 ---
 ```
+Becomes `index.html` the homepage
 :::
 
 :::::
 
+## What else is in this template?
+
+```default
+website/
+├── _quarto.yml   
+├── index.qmd      
+├── profile.jpg   # Used in `index.qmd` 
+├── _brand.yml    # Theming
+├── styles.scss   # Custom styles, none defined`
+├── _examples/    # For teaching, not in website
+├── README.md     # For GitHub, not in website
+└── _site/        # Fully rendered site, .gitignored
+```
 
 # 2. Add pages and customize navigation
 
@@ -235,51 +256,28 @@ title: My homepage
 
 `_quarto.yml`: configuration file
 
-::: {.columns}
-::: {.column .fragment}
-``` {.yaml filename="_quarto.yml"}
-project:
-  type: website
-```
-Identifies this as a Quarto website
-:::
-::: {.column .fragment}
-
 ``` {.yaml filename="_quarto.yml"}
 website:
   navbar:
     right: 
       - projects.qmd
 ```
-Controls navigation and other website settings 
-:::
-::: 
 
-## More file path examples {.smaller}
+## Folder structure determines URLs {.smaller}
 
-File path becomes URL path
+```default
+website/  
+├── _quarto.yml
+├── index.qmd             { base url }
+├── about.qmd             { base url }/about.html  
+├── reports/                       
+|    ├── index.qmd        { base url }/reports/   
+|    └── last-month.qmd   { base url }/reports/last-month.html 
+└── data/                 
+    └── sales.csv         { base url }/data/sales.csv
+```
 
-::::: columns
-::: {.column width="40%"}
-**File location**
-
-`demo.qmd`
-
-`talks/index.qmd`
-
-`data/air-quality.csv`
-:::
-
-::: {.column width="60%"}
-**URL**
-
-`{ site url }/demo.html`
-
-`{ site url }/talks/`
-
-`{ site url }/data/air-quality.csv`
-:::
-:::::
+`{ base url }`: `http://localhost:XXXX` when previewing locally
 
 ## Your Turn 
 
@@ -301,9 +299,7 @@ File path becomes URL path
 1. Switch to a `sidebar` with `content` and back again
 2. Edit `tools`
 
-<https://quarto.org/docs/websites/website-navigation.html>
-
-<https://quarto-tdg.org/websites.html#other-navigation-elements>
+Quick reference: <https://quarto-tdg.org/websites.html#other-navigation-elements>
 
 # 3.  Make the style your own
 
@@ -311,14 +307,14 @@ File path becomes URL path
 
 ``` {.yaml filename="_brand.yml"}
 color:
-  foreground: "#333333"
-  background: "#ffffff"
-  primary: "#333333"
+  foreground: "#333333"  # font color
+  background: "#ffffff"  # background color
+  primary: "#333333"     # navbar and links
 ```
 
-::: footer
-<https://quarto.org/docs/authoring/brand.html>
-:::
+**Demo:** Change `primary` 
+
+Brand Guide: <https://quarto.org/docs/authoring/brand.html>
 
 ## Use brand.yml: Fonts
 
@@ -335,13 +331,11 @@ typography:
     family: Roboto Slab
 ```
 
+**Demo:** Add these to `_brand.yml`
+
 `bunny`: Bunny Fonts, zero-tracking and no-logging policy <https://fonts.bunny.net>
 
-::: footer
-<https://quarto.org/docs/authoring/brand.html>
-:::
-
-## Check accessibility: `axe`
+## Demo: Check accessibility with `axe`
 
 Once you start playing with colors it's easy to create contrast issues. 
 
@@ -366,7 +360,7 @@ Remove before publishing!
 
 :::
 
-<https://quarto.org/docs/authoring/brand.html#brand-elements>
+Brand Guide: <https://quarto.org/docs/authoring/brand.html#brand-elements>
 
 {{< countdown "8:00" >}}
 
@@ -382,10 +376,6 @@ typography:
   monospace-block:
     background-color: "#eaf2fb"
 ```
-
-::: footer
-<https://quarto.org/docs/authoring/brand.html>
-:::
 
 ## Use brand.yml: Dark mode
 
@@ -404,14 +394,29 @@ color:
     dark: "#ffffff"
 ```
 
+## Name colors under `color: palette` to more easily refer to them
+
+```{.yaml filename="_brand.yml"}
+color:
+  palette:
+    white: "#ffffff"
+    grey: "#333333"
+    pink: "#b70ca6"
+  foreground: grey
+  background: white
+  primary: grey
+```
+
 ## Sometimes you might need to add SCSS  {.smaller}
 
 :::::: columns
+Apply `styles.scss` to all pages:
+
 ::: column
 ``` {.yaml filename="_quarto.yml"}
 format:
   html:
-    theme: [brand, styles.scss]
+    theme: [styles.scss, brand]
 ```
 :::
 
@@ -420,21 +425,63 @@ format:
 ::: fragment
 ``` {.scss filename="styles.scss"}
 /*-- scss:defaults --*/
-
+// Set SASS variables: https://quarto.org/docs/output-formats/html-themes.html#sass-variables
+$navbar-fg: $brand-white;
 
 /*-- scss:rules --*/
+// CSS rules 
+.navbar-title {
+  color: lighten($brand-pink, 50%);
+}
 
+h1 {
+  color: $brand-pink;
+}
 ```
 :::
 ::::
 ::::::
 
+See `_examples/brand-scss`.
+
+## Aside: The three parts of `_quarto.yml`
+
+```{.yaml filename="_quarto.yml" code-line-numbers="1-2|4-16|18-20"}
+project: # Project options 
+  type: website
+
+website: # Website options 
+  title: "My Website"
+  search: false
+  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
+  page-footer: "Made with ❤️ and Quarto"
+  navbar:
+    right:
+      - text: Home
+        href: index.qmd
+    tools: 
+      - icon: github
+        text: Github
+        href: https://github.com
+
+format: # Page 'html' format options
+  html:
+    theme: [brand, styles.scss]    
+```
+
+Reference: [Projects > Websites](https://quarto.org/docs/reference/projects/websites.html), and [Formats > HTML](https://quarto.org/docs/reference/formats/html.html)
 
 # 4. Publish
 
-## Venues
+## Pick a venue
 
+| Provider             | Private Source | Private Site                 | Custom Domain |
+|----------------------|----------------|------------------------------|---------------|
+| Posit Connect Cloud  | ✔️             | Paid plans                   | Paid plans    |
+| GitHub               | Paid plans     | GitHub Enterprise Cloud only | ✔️            |
+| Netlify              | ✔️             | Paid plans                   | ✔️            |
 
+Or Posit Connect if your org has it.
 
 ## Demo: Use `quarto publish`
 
@@ -446,13 +493,17 @@ Other venues: `gh-pages`, `netlify`, `connect`
 
 Updates? Re-run `quarto publish`
 
+Pick **one of**: 
+
+* Your Turn: Posit Connect Cloud
+* Your Turn: GitHub Pages
+
+
 ::: footer
 <https://quarto.org/docs/publishing/>
 :::
 
 ## Your Turn: Posit Connect Cloud
-
-Pick **one of**: Your Turn: Posit Connect Cloud or Your Turn: GitHub Pages
 
 ::: task
 
@@ -462,6 +513,7 @@ Pick **one of**: Your Turn: Posit Connect Cloud or Your Turn: GitHub Pages
     quarto publish posit-connect-cloud
     ```
 
+2.  **Challenge**: find the setting to customize the URL. 
 :::
 
 {{< countdown "10:00" >}}
@@ -470,19 +522,60 @@ Pick **one of**: Your Turn: Posit Connect Cloud or Your Turn: GitHub Pages
 
 ::: task
 
-1.  Make your project a Git repo
-
-2.  Add `_site/` to `.gitignore`
+1.  Make your project a Git repo. 
     
-3.  Commit, and push to GitHub
+2.  Commit, and push to GitHub
 
-4.  Publish to GitHub Pages:
+3.  Publish to GitHub Pages:
 
     ``` {.bash filename="Terminal"}
     quarto publish gh-pages
     ```
 
+:::
+
 {{< countdown "10:00" >}}
+
+## Other options
+
+1. Posit Connect Cloud: 
+    
+    - Use [Posit Publisher extension](https://marketplace.visualstudio.com/items?itemName=Posit.publisher) in Positron or VS Code
+    - Connect [directly to GitHub repo](https://docs.posit.co/connect-cloud/user/publish/github.html)
+
+2. Continuous integration: <https://quarto-tdg.org/websites.html#sec-ci>
+
+## Website metadata: search engines
+
+Set `title`, `description` and `site-url`.
+
+E.g. for this workshop's website:
+
+```{.yaml filename="_quarto.yml"}
+website:
+  title: Zero to Website with Quarto
+  description: "Zero to website with Quarto Workshop for Cascadia R Conf 2026"
+  site-url: https://cwickham.github.io/cascadia2026
+```
+
+## Website metadata: social cards
+
+Add a 1200 × 630 px `image` and `image-alt`:
+
+::: {.columns}
+::: {.column}
+```{.yaml filename="_quarto.yml"}
+website:
+  image: thumbnail.jpeg
+  image-alt: "Zero to Website with Quarto with a screenshot of a website titled 'Alicia, Data Scientist'."
+  open-graph: true 
+```
+:::
+
+::: {.column}
+![](images/social-cards.png){fig-alt="Example of social card for the workshop website as seen in Slack"}
+:::
+
 :::
 
 # 5. Use listings for lists of content
@@ -499,67 +592,161 @@ Pick **one of**: Your Turn: Posit Connect Cloud or Your Turn: GitHub Pages
 
 ## Use listings for ...
 
-<iframe src="https://charlotte.quarto.pub/listings/" width="100%" height="550" title="Listing Examples">
+::: {.panel-tabset}
 
-</iframe>
+## Blog
 
-::: footer
-<https://charlotte.quarto.pub/listings/>
+![](https://quarto-tdg.org/images/website-listing-default.png)
+
+## People
+
+![](https://quarto-tdg.org/images/website-listing-grid.png)
+
+## Publications
+
+![](https://quarto-tdg.org/images/website-listing-table.png)
+
 :::
 
-## `contents` can be a YAML file {.smaller}
+See more examples at: <https://charlotte.quarto.pub/listings/>
 
-::::: columns
-::: {.column width="40%"}
-``` {.yaml filename="talks/index.qmd"}
+## Listing contents: can be a YAML file {.smaller}
+
+Items link to `path`.
+
+``` {.yaml filename="_examples/listing-talks/talks.yml"}
+- date: 2025-03-12
+  title: "From Notebook to Production: Deploying ML Models with Confidence"
+  description: "A practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection."
+  venue: "PyData Seattle"
+  path: "https://example.com/talks/notebook-to-production"
+
+- date: 2024-11-08
+  title: "The Art of the Reproducible Report"
+  description: "Why your analysis should run end-to-end with a single command, and how literate programming tools like Quarto make stakeholder-ready reports painless."
+  venue: "posit::conf"
+  path: "https://example.com/talks/reproducible-report"
+
+- date: 2024-06-04
+  title: "Causal Inference for the Skeptical Analyst"
+  description: "Correlation isn't causation, but we can do better than throwing up our hands. An accessible tour of difference-in-differences, propensity scores, and when to trust them."
+  venue: "useR! Conference"
+  path: "https://example.com/talks/causal-inference-skeptical-analyst"
+```
+
+
+
+## Listing contents: can other pages {.smaller}
+
+Items link to page.
+
+
+::: {.columns}
+
+::: {.column}
+```default
+_examples/listing-projects
+└──projects
+    ├── coastal-sensors.qmd
+    ├── forest-canopy.qmd
+    ├── watershed-forecasting.qmd
+    └── images
+```
+:::
+
+::: {.column}
+
+````{.markdown .code-overflow-wrap filename="projects/coastal-sensors.qmd"}
+---
+title: "Coastal Sensor Network"
+description: "Real-time monitoring of water quality along the Oregon coast using a fleet of low-cost IoT sensors."
+image: images/photo-1601698832159-665cbefd11da.jpg
+categories: [IoT, Time Series, Dashboards]
+---
+
+## Overview
+
+Placeholder content. This project deploys a network of sensors that stream
+temperature, salinity, and turbidity readings into a central pipeline, surfaced
+through a live dashboard for researchers and the public.
+
+Photo by [Karsten Winegeart](https://unsplash.com/@_karsten) on [Unsplash](https://unsplash.com/photos/_m-Xjo9R_y4).
+
+````
+:::
+
+:::
+
+## Your turn: Brainstorm a listing
+
+::: task
+
+1. Brainstorm a list of content you might want to include in your website.
+
+2. What are the key pieces of information for each item? E.g. `title`, `description`, ... etc.
+
+3. Does it make sense to give items each their own page, or to use a YAML file?
+
+:::
+
+See more examples at: <https://charlotte.quarto.pub/listings/>
+
+{{< countdown "5:00" >}}
+
+## Adding a listing page
+
+A listing page is a regular page that uses the `listing` option.
+
+::: {.columns}
+
+::: {.column}
+
+```{.yaml filename="projects.qmd" code-line-numbers="|3-5"}
+---
+title: Projects
+listing:
+  contents: projects
+  type: grid
+  grid-columns: 2
+  categories: true
+  filter-ui: false
+  sort-ui: false
+---
+```
+:::
+
+::: {.column}
+```{.yaml filename="talks.qmd" code-line-numbers="|3-5"}
 ---
 title: Talks
 listing:
   contents: talks.yml
   type: table
-  fields: [title, venue, date]
+  filter-ui: false
+  sort-ui: false
 ---
 ```
 :::
 
-::: {.column width="60%"}
-``` {.yaml filename="talks/talks.yml"}
-- title: "Quarto: Reproducible Publishing"
-  date: 2024-03-01
-  venue: Oakridge National Lab
-  path: https://github.com/cwickham/oakridge
-- title: What's New in Quarto?
-  date: 2023-09-01
-  venue: "`posit::conf(2023)`"
-  path: https://youtu.be/WR08GESib9Y?si=vTxco6_yuEDV8TBC
-- title: This Month I Learned...
-  date: 2021-04-01
-  venue: Rladies Washington D.C., via Zoom 
-  path: https://cwickham.github.io/this-month-I-learned/#1
-```
 :::
-:::::
 
-# Other features
+## Your turn: Add a listing
 
-## Website metadata
+::: task
 
-```{.yaml filename="_quarto.yml"}
-website:
-  title:
-  description:
-  site-url:
-```
+1. Drag one of `_examples/listing-projects` or `_examples/listing-talks` into your website.
 
-## Social cards
+2. Edit at least one item to match your listing idea.
 
+3. Edit the listing page `talks.qmd`/`projects.qmd` to reflect your list.
 
-```{.yaml filename="_quarto.yml"}
-website:
-  image: social-card.png
-  image-alt:
-  open-graph: true
-```
+4. Play with some of the `listing` options.
+
+:::
+
+Listing documentation: [Types](https://quarto.org/docs/websites/website-listings.html#listing-types) and [Options](https://quarto.org/docs/websites/website-listings.html#listing-options)
+
+{{< countdown "10:00" >}}
 
 
 # Wrap Up
@@ -587,30 +774,25 @@ title: My homepage
 
 :::::
 
+## Building a website
+
 -  Add pages by adding Quarto documents 
--  Control navigation, website settings, theming etc. in `_quarto.yml`
+-  Control navigation, website settings, etc. in `_quarto.yml`
+-  Control colors and fonts in `_brand.yml`
+-  Two special kinds of pages: listings and about pages
 
-Explore docs at: <https://quarto.org/docs/websites/>
+## Learning more
 
-## Why Quarto for Websites?
+* Quarto websites documentation: <https://quarto.org/docs/websites/>  
+* Websites chapter in (in-progress) book: <https://quarto-tdg.org/websites.html>
+* Websites video series: <https://opensource.posit.co/blog/2024-12-04_websites-workshop/>
+* Learn from other people's website source: <https://quarto.org/docs/gallery/#websites>
 
--   You don't need to learn anything new for page content
--   You get nice website features out of the box: GitHub links, social cards, navigation, etc.
--   A lot of customization available via YAML options
--   Customize style as much (or as little) as you want
-
-
-::: footer
-<https://charlotte.quarto.pub/dslc24>
-:::
-
-## Questions?
+## Q&A
 
 ## Post Work
 
-*I'll post in Slack*
-
-* Share your URL
+* Share your URL in Slack
 
 * Ask questions in Slack
 
