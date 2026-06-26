@@ -54,7 +54,7 @@
     "href": "index.html",
     "title": "Zero to Website with Quarto",
     "section": "",
-    "text": "Friday, June 26, 2026, 1:30–4:30 PM\nMiller Center, 615 SW Harrison Street, Portland, OR\nJump to Pre-work Jump to slides",
+    "text": "Friday, June 26, 2026, 1:30–4:30 PM\nKarl Miller Center, 615 SW Harrison Street, Portland, OR\nJump to Pre-work Jump to slides",
     "crumbs": [
       "Home"
     ]
@@ -119,7 +119,7 @@
     "href": "slides.html#what-to-expect",
     "title": "From Zero to Website with Quarto",
     "section": "What to expect",
-    "text": "What to expect\nMy turns: I’ll use slides, and live code to demonstrate ideas.\nYour Turns: You practice what you’ve just seen.\nAsk questions:\n\nDuring Your Turns\nAfter Your Turns\nIn Slack channel\n\n\nhttps://cwickham.github.io/cascadia2026"
+    "text": "What to expect\nMy turns: I’ll use slides, and live code to demonstrate ideas.\nYour Turns: You practice what you’ve just seen.\nAsk questions:\n\nDuring Your Turns ( Pink Post-it: Send help!)\nAfter Your Turns\nIn Slack channel\n\n\nhttps://cwickham.github.io/cascadia2026"
   },
   {
     "objectID": "slides.html#demo-start-from-a-template",
@@ -133,7 +133,7 @@
     "href": "slides.html#your-turn-get-the-starter-template",
     "title": "From Zero to Website with Quarto",
     "section": "Your Turn: Get the starter template",
-    "text": "Your Turn: Get the starter template\n\n\nStart a new project.\nRStudio &gt; New Project\nPositron &gt; New Folder from Template &gt; Empty Project\nGet the template:\n\n\nTerminal\n\nquarto use template cwickham/website-starter\n\nCreate a subdirectory for template? No\nOpen and preview index.qmd.\nMatch the content in index.qmd to the preview."
+    "text": "Your Turn: Get the starter template\n\n\nStart a new project.\nRStudio &gt; New Project\nPositron &gt; New Folder from Template &gt; Empty Project\nGet the template:\n\n\nTerminal\n\nquarto use template cwickham/website-starter\n\nCreate a subdirectory for template? No\nOpen and preview index.qmd. (Put up  orange Post-it)\nMatch the content in index.qmd to the preview."
   },
   {
     "objectID": "slides.html#demo-exploring-index.qmd",
@@ -189,7 +189,7 @@
     "href": "slides.html#folder-structure-determines-urls",
     "title": "From Zero to Website with Quarto",
     "section": "Folder structure determines URLs",
-    "text": "Folder structure determines URLs\nwebsite/  \n├── _quarto.yml\n├── index.qmd             { base url }\n├── about.qmd             { base url }/about.html  \n├── reports/                       \n|    ├── index.qmd        { base url }/reports/   \n|    └── last-month.qmd   { base url }/reports/last-month.html \n└── data/                 \n    └── sales.csv         { base url }/data/sales.csv\n{ base url }: http://localhost:XXXX when previewing locally"
+    "text": "Folder structure determines URLs\nwebsite/  \n├── _quarto.yml      \n├── index.qmd         { base url }\n├── about.qmd         { base url }/about.html  \n├── reports/                   \n|    ├── index.qmd    { base url }/reports/   \n|    └── feb.qmd      { base url }/reports/feb.html \n└── data/             \n    └── sales.csv     { base url }/data/sales.csv\n{ base url }: http://localhost:XXXX when previewing locally"
   },
   {
     "objectID": "slides.html#your-turn-2",
@@ -224,7 +224,7 @@
     "href": "slides.html#demo-check-accessibility-with-axe",
     "title": "From Zero to Website with Quarto",
     "section": "Demo: Check accessibility with axe",
-    "text": "Demo: Check accessibility with axe\nOnce you start playing with colors it’s easy to create contrast issues.\nCheck with axe-core by adding:\n\n\n_quarto.yml\n\nformat:\n  html:\n    axe:\n      output: document\n\nRemove before publishing!"
+    "text": "Demo: Check accessibility with axe\nOnce you start playing with colors it’s easy to create contrast issues.\nCheck with axe-core by adding:\n\n\n_quarto.yml\n\nformat:\n  html:\n    axe:\n      output: document\n\n\n\n\n\n\n\nRemove before publishing!"
   },
   {
     "objectID": "slides.html#your-turn-3",
@@ -364,7 +364,7 @@
     "href": "slides.html#your-turn-add-a-listing",
     "title": "From Zero to Website with Quarto",
     "section": "Your turn: Add a listing",
-    "text": "Your turn: Add a listing\n\n\nDrag one of _examples/listing-projects or _examples/listing-talks into your website.\nEdit at least one item to match your listing idea.\nEdit the listing page talks.qmd/projects.qmd to reflect your list.\nPlay with some of the listing options.\n\n\nListing documentation: Types and Options"
+    "text": "Your turn: Add a listing\n\n\nDrag the content of one of _examples/listing-projects/ or _examples/listing-talks/ into your website.\nEdit at least one item to match your listing idea.\nEdit the listing page talks.qmd/projects.qmd to reflect your list.\nPlay with some of the listing options.\n\n\nListing documentation: Types and Options"
   },
   {
     "objectID": "slides.html#your-turn-keep-building",
