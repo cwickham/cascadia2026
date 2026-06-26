@@ -118,7 +118,7 @@ BREAK: 3:00 -- 3:15pm
 
 Ask questions:
 
-* During Your Turns
+* During Your Turns ([]{.postit .pink} Pink Post-it: Send help!)
 * After Your Turns
 * In Slack channel
 
@@ -150,7 +150,7 @@ quarto use template cwickham/website-starter
 
     *Create a subdirectory for template? No*
 
-3. Open and preview `index.qmd`.
+3. Open and preview `index.qmd`. (Put up []{.postit .orange} orange Post-it)
 
 4. Match the content in `index.qmd` to the preview.
 :::
@@ -224,7 +224,7 @@ Becomes `index.html` the homepage
 
 ## What else is in this template?
 
-```default
+```{.default code-line-numbers="1-3|1-4|5-6|7-8|9"}
 website/
 ├── _quarto.yml   
 ├── index.qmd      
@@ -264,18 +264,18 @@ website:
       - projects.qmd
 ```
 
-## Folder structure determines URLs {.smaller}
+## Folder structure determines URLs 
 
 ```default
 website/  
-├── _quarto.yml
-├── index.qmd             { base url }
-├── about.qmd             { base url }/about.html  
-├── reports/                       
-|    ├── index.qmd        { base url }/reports/   
-|    └── last-month.qmd   { base url }/reports/last-month.html 
-└── data/                 
-    └── sales.csv         { base url }/data/sales.csv
+├── _quarto.yml      
+├── index.qmd         { base url }
+├── about.qmd         { base url }/about.html  
+├── reports/                   
+|    ├── index.qmd    { base url }/reports/   
+|    └── feb.qmd      { base url }/reports/feb.html 
+└── data/             
+    └── sales.csv     { base url }/data/sales.csv
 ```
 
 `{ base url }`: `http://localhost:XXXX` when previewing locally
@@ -351,7 +351,9 @@ format:
       output: document
 ```
 
-Remove before publishing! 
+::: callout-caution
+## Remove before publishing! 
+:::
 
 ## Your Turn
 
@@ -599,15 +601,15 @@ website:
 
 ## Blog
 
-![](https://quarto-tdg.org/images/website-listing-default.png)
+![](https://quarto-tdg.org/images/website-listing-default.png){height="400px"}
 
 ## People
 
-![](https://quarto-tdg.org/images/website-listing-grid.png)
+![](https://quarto-tdg.org/images/website-listing-grid.png){height="400px"}
 
 ## Publications
 
-![](https://quarto-tdg.org/images/website-listing-table.png)
+![](https://quarto-tdg.org/images/website-listing-table.png){height="400px"}
 
 :::
 
@@ -617,7 +619,7 @@ See more examples at: <https://charlotte.quarto.pub/listings/>
 
 Items link to `path`.
 
-``` {.yaml filename="_examples/listing-talks/talks.yml"}
+``` {.yaml filename="_examples/listing-talks/talks.yml" code-line-numbers="|1-5|5"}
 - date: 2025-03-12
   title: "From Notebook to Production: Deploying ML Models with Confidence"
   description: "A practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection."
@@ -647,7 +649,7 @@ Items link to page.
 ::: {.columns}
 
 ::: {.column}
-```default
+```{.default code-line-numbers="|3"}
 _examples/listing-projects
 └──projects
     ├── coastal-sensors.qmd
@@ -657,9 +659,9 @@ _examples/listing-projects
 ```
 :::
 
-::: {.column}
+::: {.column .fragment}
 
-````{.markdown .code-overflow-wrap filename="projects/coastal-sensors.qmd"}
+````{.markdown .code-overflow-wrap filename="projects/coastal-sensors.qmd" code-line-numbers="|1-6"}
 ---
 title: "Coastal Sensor Network"
 description: "Real-time monitoring of water quality along the Oregon coast using a fleet of low-cost IoT sensors."
@@ -737,7 +739,7 @@ listing:
 
 ::: task
 
-1. Drag one of `_examples/listing-projects` or `_examples/listing-talks` into your website.
+1. Drag the content of one of `_examples/listing-projects/` or `_examples/listing-talks/` into your website.
 
 2. Edit at least one item to match your listing idea.
 

@@ -25,4 +25,13 @@
     border-left: solid 5px darken($primary, 10%);
     background-color: lighten($primary, 60%);
   }
-  
+
+.postit {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 2px;
+  vertical-align: middle;
+  &.pink   { background-color: #f17799; }
+  &.orange { background-color: #f9a94e; } // brand orange
+}

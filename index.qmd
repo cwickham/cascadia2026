@@ -4,7 +4,7 @@ subtitle: Cascadia Conf 2026
 ---
 
 > Friday, June 26, 2026, 1:30–4:30 PM  
-> Miller Center, 615 SW Harrison Street, Portland, OR
+> Karl Miller Center, 615 SW Harrison Street, Portland, OR
 
 [Jump to Pre-work](prework.qmd){.btn .btn-primary} [Jump to slides](materials.qmd){.btn .btn-primary} 
 
