@@ -232,8 +232,7 @@ website/
 ├── _brand.yml    # Theming
 ├── styles.scss   # Custom styles, none defined`
 ├── _examples/    # For teaching, not in website
-├── README.md     # For GitHub, not in website
-└── _site/        # Fully rendered site, .gitignored
+└── _site/        # Fully rendered site
 ```
 
 # 2. Add pages and customize navigation
@@ -368,6 +367,8 @@ format:
 Brand Guide: <https://quarto.org/docs/authoring/brand.html#brand-elements>
 
 {{< countdown "8:00" >}}
+
+## Back @ 3:15pm
 
 ## Use brand.yml: Code
 
@@ -517,7 +518,7 @@ Pick **one of**:
 
 ::: task
 
-1.  Make your project a Git repo. 
+1.  Make your project a Git repo. Add `_site/` to `.gitignore`
     
 2.  Commit, and push to GitHub
 
